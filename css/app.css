@@ -5,41 +5,46 @@ body {
   font-family: Helvetica, sans-serif;
 }
 header {
-  padding: 0 48px;
-  height: 100px;
+  padding: 0 20px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 header h1 {
-  font-size: calc(24px + 2vw);
+  font-size: min(36px, calc(16px + 1.5vw));
   color: #161616;
   flex-grow: 1;
 }
 header a:not(.text-link) {
-text-decoration: none;
-border-radius: 0px;
-border: none;
-padding: 20px 32px;
-text-transform: uppercase;
-letter-spacing: 1px;
-color: #fff;
-background: #161616;
-cursor: pointer;
-transition: all .2s ease-in-out;
-order: 1;
+  text-decoration: none;
+  border-radius: 0px;
+  border: none;
+  padding: 14px 24px;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #fff;
+  background: #161616;
+  cursor: pointer;
+  transition: all .2s ease-in-out;
+  order: 1;
 }
 header a:not(.text-link):hover {
-border-radius: 8px;
-background: #222;
+  border-radius: 8px;
+  background: #222;
 }
 a.text-link {
-text-decoration: none;
-color:#999;
-margin: 0 48px;
+  text-decoration: none;
+  color:#999;
+  margin: 0 32px;
+  transition: color .2s ease-out;
+}
+a.text-link:hover {
+  color:#161616;
 }
 iframe {
-height: calc(100vh - 100px) !important;
+  height: calc(100vh - 60px) !important;
 }
 @media screen and (max-width: 920px) {
 header h1 {
@@ -51,33 +56,36 @@ header a:not(.text-link) {
 }
 }
 @media screen and (max-width: 720px) {
-div#pdf-wrapper {
-  display: none;
+  div#pdf-wrapper {
+    display: none;
+  }
+  header {
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    height: auto;
+    padding: 16px 0;
+  }
+  header h1 {
+    width: 100%;
+    margin-bottom: 16px;
+  }
+  header a:not(.text-link) {
+    margin-left: 2vw;
+  }
+  a.text-link {
+    margin: 0 2vw 0 0;
+  }
+  iframe {
+    height: calc(100vh - 110px) !important;
+  }
 }
-header {
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align: center;
-  height: auto;
-  padding: 16px 0;
-}
-header h1 {
-  width: 100%;
-  margin-bottom: 16px;
-}
-header a:not(.text-link) {
-  margin-left: 2vw;
-}
-a.text-link {
-  margin: 0 2vw 0 0;
-}
-iframe {
-  height: calc(100vh - 110px) !important;
-}
-}
-@media screen and (max-width: 359px) {
-a.text-link {
-  order: 2;
-  margin-top: 24px;
-}
+@media screen and (max-width: 405px) {
+  a.text-link {
+    order: 2;
+    margin-top: 24px;
+  }
+  iframe {
+    height: calc(100vh - 150px) !important;
+  }
 }

@@ -14,7 +14,8 @@ header {
 header h1 {
   font-size: min(36px, calc(16px + 1.5vw));
   color: #161616;
-  flex-grow: 1;
+  display: inline-block;
+  margin-right: 12px;
 }
 header a:not(.text-link) {
   text-decoration: none;
@@ -37,7 +38,7 @@ header a:not(.text-link):hover {
 a.text-link {
   text-decoration: none;
   color:#999;
-  margin: 0 32px;
+  margin: 0 12px;
   transition: color .2s ease-out;
 }
 a.text-link:hover {
@@ -61,31 +62,14 @@ header a:not(.text-link) {
   }
   header {
     flex-wrap: wrap;
-    justify-content: center;
-    text-align: center;
     height: auto;
-    padding: 16px 0;
-  }
-  header h1 {
-    width: 100%;
-    margin-bottom: 16px;
-  }
-  header a:not(.text-link) {
-    margin-left: 2vw;
+    padding: 16px;
+    gap: 16px;
   }
   a.text-link {
-    margin: 0 2vw 0 0;
+    margin: 0;
   }
   iframe {
-    height: calc(100vh - 110px) !important;
-  }
-}
-@media screen and (max-width: 405px) {
-  a.text-link {
-    order: 2;
-    margin-top: 24px;
-  }
-  iframe {
-    height: calc(100vh - 150px) !important;
+    height: calc(100vh - 111px) !important;
   }
 }
